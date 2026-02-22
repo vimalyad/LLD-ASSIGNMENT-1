@@ -1,3 +1,5 @@
+package entities;
+
 public class StudentRecord {
     public final String id;
     public final String name;
@@ -11,6 +13,6 @@ public class StudentRecord {
 
     @Override
     public String toString() {
-        return "StudentRecord{id='" + id + "', name='" + name + "', email='" + email + "', phone='" + phone + "', program='" + program + "'}";
+        return "entities.StudentRecord{id='" + id + "', name='" + name + "', email='" + email + "', phone='" + phone + "', program='" + program + "'}";
     }
 }
