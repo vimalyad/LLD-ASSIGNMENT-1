@@ -1,4 +1,5 @@
-// Smell: unused UI wrapper
+package printer;
+
 public class ConsoleUi {
     public void print(String s) { System.out.println(s); }
 }
