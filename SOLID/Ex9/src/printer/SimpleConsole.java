@@ -1,4 +1,5 @@
-// Smell: unused console wrapper
+package printer;
+
 public class SimpleConsole {
     public void log(String s) { System.out.println(s); }
 }

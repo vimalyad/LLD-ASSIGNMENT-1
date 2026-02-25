@@ -1,3 +1,5 @@
+package entities;
+
 public class Submission {
     public final String roll;
     public final String code;

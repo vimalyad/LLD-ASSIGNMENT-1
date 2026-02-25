@@ -1,0 +1,12 @@
+package evaluation.impl;
+
+import config.Rubric;
+import entities.Submission;
+import evaluation.contracts.ICodeGrader;
+
+public class CodeGrader implements ICodeGrader {
+    public int grade(Submission s, Rubric r) {
+        int base = Math.min(80, 50 + s.code.length() % 40);
+        return base + r.bonus;
+    }
+}
