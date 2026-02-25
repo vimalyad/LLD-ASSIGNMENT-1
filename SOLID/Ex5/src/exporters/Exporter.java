@@ -5,17 +5,22 @@ import dto.ExportResult;
 
 public abstract class Exporter {
     public final ExportResult export(ExportRequest req) {
-        if (req == null) throw new IllegalArgumentException("req must not be null");
-        ExportResult result = doExport(req);
-        if (result == null)
-            throw new IllegalStateException(getClass().getSimpleName() + ".doExport() returned null");
-        if (result.contentType == null || result.contentType.isEmpty())
-            throw new IllegalStateException(getClass().getSimpleName() + " returned blank mimeType");
-        if (result.bytes == null)
-            throw new IllegalStateException(getClass().getSimpleName() + " returned null data");
-
-        return result;
+        ExportRequest request = process(req);
+        return doExport(request);
     }
 
     protected abstract ExportResult doExport(ExportRequest req);
+
+    private ExportRequest process(ExportRequest req) {
+        if (req == null) {
+            throw new IllegalArgumentException("Request must not be null");
+        } else {
+            if (req.title == null || req.body == null) {
+                String title = req.title != null ? req.title : "";
+                String body = req.body != null ? req.body : "";
+                return new ExportRequest(title, body);
+            }
+        }
+        return req;
+    }
 }

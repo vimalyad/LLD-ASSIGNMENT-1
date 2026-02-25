@@ -5,7 +5,7 @@ public class ExportRequest {
     public final String body;
 
     public ExportRequest(String title, String body) {
-        this.title = title != null ? title : "";
-        this.body = body != null ? body : "";
+        this.title = title ;
+        this.body = body;
     }
 }
