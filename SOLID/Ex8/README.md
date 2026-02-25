@@ -4,9 +4,9 @@
 Clubs have different roles: treasurer, secretary, event lead. The admin tool interface currently combines everything.
 
 ## 2. Current behavior
-- One interface `ClubAdminTools` includes finance, minutes, and event operations
+- One interface `tools.ClubAdminTools` includes finance, minutes, and event operations
 - Each role tool implements methods it does not use (dummy / exceptions)
-- `ClubConsole` calls only the relevant subset per role
+- `service.ClubConsole` calls only the relevant subset per role
 
 ## 3. What’s wrong (at least 5 issues)
 1. Fat interface forces irrelevant methods.
@@ -26,7 +26,7 @@ Clubs have different roles: treasurer, secretary, event lead. The admin tool int
 
 ## 6. Acceptance criteria
 - No dummy/no-op implementations for irrelevant methods.
-- `ClubConsole` depends on minimal interfaces.
+- `service.ClubConsole` depends on minimal interfaces.
 
 ## 7. How to run
 ```bash
