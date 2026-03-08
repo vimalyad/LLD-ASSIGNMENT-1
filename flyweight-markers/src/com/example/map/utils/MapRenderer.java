@@ -1,4 +1,6 @@
-package com.example.map;
+package com.example.map.utils;
+
+import com.example.map.model.MapMarker;
 
 import java.util.List;
 

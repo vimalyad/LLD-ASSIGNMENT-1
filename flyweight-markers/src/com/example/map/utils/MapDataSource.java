@@ -1,4 +1,8 @@
-package com.example.map;
+package com.example.map.utils;
+
+import com.example.map.factory.MarkerStyleFactory;
+import com.example.map.model.MapMarker;
+import com.example.map.model.MarkerStyle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +10,10 @@ import java.util.Random;
 
 /**
  * Generates markers for demo/testing.
- *
+ * <p>
  * CURRENT STATE (BROKEN ON PURPOSE):
  * - Creates new MarkerStyle per MapMarker via MapMarker constructor.
- *
+ * <p>
  * TODO (student):
  * - After introducing MarkerStyleFactory, refactor so identical styles are shared.
  * - Suggested approach:
@@ -37,7 +41,9 @@ public class MapDataSource {
             int size = SIZES[rnd.nextInt(SIZES.length)];
             boolean filled = rnd.nextBoolean();
 
-            out.add(new MapMarker(lat, lng, label, shape, color, size, filled));
+            MarkerStyle style = MarkerStyleFactory.get(shape, color, size, filled);
+
+            out.add(new MapMarker(lat, lng, label, style));
         }
         return out;
     }

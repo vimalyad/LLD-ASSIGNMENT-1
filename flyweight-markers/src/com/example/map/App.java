@@ -1,5 +1,10 @@
 package com.example.map;
 
+import com.example.map.model.MapMarker;
+import com.example.map.test.QuickCheck;
+import com.example.map.utils.MapDataSource;
+import com.example.map.utils.MapRenderer;
+
 import java.util.List;
 
 /**
@@ -17,6 +22,9 @@ public class App {
 
         System.out.println();
         System.out.println("Run QuickCheck to verify Flyweight sharing:");
-        System.out.println("  java com.example.map.QuickCheck");
+        System.out.println("  java com.example.map.test.QuickCheck\n");
+
+        System.out.println("RUNNING QUICKCHECK....\n");
+        QuickCheck.run();
     }
 }
