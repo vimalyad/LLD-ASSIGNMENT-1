@@ -1,6 +1,6 @@
 package com.example.payments.client;
 
-import com.example.payments.gateway.impl.SafeCashPayment;
+import com.example.payments.model.SafeCashPayment;
 
 public class SafeCashClient {
     public SafeCashPayment createPayment(int amount, String user) {

@@ -1,4 +1,4 @@
-package com.example.payments.gateway.impl;
+package com.example.payments.model;
 
 public class SafeCashPayment {
     private final int amount;
